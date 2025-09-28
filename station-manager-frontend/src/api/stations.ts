@@ -1,11 +1,13 @@
-import axios from 'axios';
-
-const API_URL = 'http://localhost:8080/api/stations';
+import axiosInstance from './axios-config';
 
 export async function getStations() {
-  return axios.get(API_URL);
+  return axiosInstance.get('/stations');
 }
 
 export async function addStation(name: string, location: string) {
-  return axios.post(API_URL, { name, location });
+  return axiosInstance.post('/stations/save', { name, location });
+}
+
+export async function saveStations() {
+  return axiosInstance.post('/stations/save');
 }
