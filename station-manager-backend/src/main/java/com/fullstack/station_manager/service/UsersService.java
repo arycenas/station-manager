@@ -23,9 +23,8 @@ public class UsersService implements UserDetailsService {
 
   public RegisterResponse registerUser(RegisterRequest request) {
     var existingUser = usersRepository.findByUsername(request.getUsername());
-    if (existingUser == null) {
+    if (existingUser != null)
       return RegisterResponse.builder().message("Username already exists").build();
-    }
 
     var newUser =
         Users.builder()
