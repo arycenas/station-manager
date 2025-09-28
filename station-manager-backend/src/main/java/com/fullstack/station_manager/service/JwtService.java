@@ -1,17 +1,21 @@
 package com.fullstack.station_manager.service;
 
-import com.fullstack.station_manager.utility.Constant;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
 import java.security.Key;
 import java.util.Date;
 import java.util.Map;
 import java.util.function.Function;
+
 import javax.crypto.SecretKey;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import com.fullstack.station_manager.utility.Constant;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 @Service
 public class JwtService {
@@ -42,13 +46,19 @@ public class JwtService {
   }
 
   public String extractUsernameFromToken(String token) {
-    return extractUsernameFromToken(token);
+    return getClaimsFromToken(token, Claims::getSubject);
   }
 
   public boolean validateToken(String token, UserDetails userDetails) {
     final String username = extractUsernameFromToken(token);
 
     return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+  }
+
+  public boolean validateTokenFromClient(String token) {
+      var tokenIsExpired = isTokenExpired(token);
+
+      return !tokenIsExpired;
   }
 
   private Key getSigningKey() {
