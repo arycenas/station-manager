@@ -186,29 +186,29 @@
   }
 
   .register-page {
-    max-width: 420px;
+    max-width: 400px;
     width: 100%;
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(139, 92, 246, 0.1);
-    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 20px;
     box-shadow:
-      0 20px 40px rgba(139, 92, 246, 0.1),
-      0 8px 16px rgba(0, 0, 0, 0.05);
+      0 10px 30px rgba(139, 92, 246, 0.15),
+      0 4px 12px rgba(0, 0, 0, 0.08);
     position: relative;
     animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .form-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .form-header h1 {
     margin: 0 0 0.5rem 0;
     color: #4c1d95;
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 700;
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
     -webkit-background-clip: text;
@@ -246,7 +246,7 @@
   }
 
   .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     animation-fill-mode: both;
   }
@@ -278,10 +278,10 @@
 
   .form-group input {
     width: 100%;
-    padding: 1rem 1.25rem;
+    padding: 0.875rem 1rem;
     border: 2px solid #e5e7eb;
-    border-radius: 16px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
     background: rgba(255, 255, 255, 0.8);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
@@ -312,16 +312,16 @@
 
   .submit-button {
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0.875rem 1.25rem;
     background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
     color: white;
     border: none;
-    border-radius: 16px;
-    font-size: 1.1rem;
+    border-radius: 12px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.3);
     letter-spacing: 0.01em;
     display: flex;
     align-items: center;
@@ -367,9 +367,9 @@
 
   .login-link {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: #6b7280;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .login-link a {
@@ -423,17 +423,74 @@
   }
 
   /* Responsive design */
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     .page-background {
       padding: 1rem;
     }
 
     .register-page {
-      padding: 2rem;
+      max-width: 100%;
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
     }
 
     .form-header h1 {
       font-size: 1.875rem;
+    }
+
+    .form-group input {
+      padding: 0.875rem 1rem;
+    }
+
+    .submit-button {
+      padding: 0.875rem 1.25rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-background {
+      padding: 0.5rem;
+    }
+
+    .register-page {
+      padding: 1.5rem 1rem;
+      border-radius: 16px;
+    }
+
+    .form-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Desktop optimizations */
+  @media (min-width: 1024px) {
+    .page-background {
+      padding: 2.5rem 2rem;
+    }
+
+    .register-page {
+      max-width: 420px;
+      padding: 2.5rem 2rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .register-page {
+      max-width: 440px;
+      padding: 3rem 2.5rem;
+    }
+
+    .form-header h1 {
+      font-size: 2.25rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
     }
   }
 </style>

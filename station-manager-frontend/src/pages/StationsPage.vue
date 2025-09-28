@@ -402,21 +402,21 @@
   .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     background: white;
-    min-height: calc(100vh - 200px);
-    margin-top: -2rem;
-    border-radius: 24px 24px 0 0;
-    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 180px);
+    margin-top: -1.5rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
   }
 
   /* Buttons */
   .btn-primary,
   .btn-secondary {
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 10px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -549,12 +549,12 @@
 
   /* Search Section */
   .search-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .search-container {
     position: relative;
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
   }
 
@@ -569,10 +569,10 @@
 
   .search-input {
     width: 100%;
-    padding: 1rem 1rem 1rem 3rem;
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
     border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    font-size: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
     background: #f9fafb;
     transition: all 0.3s ease;
   }
@@ -586,7 +586,7 @@
 
   /* Stations Container */
   .stations-container {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .loading-state {
@@ -644,17 +644,17 @@
   /* Stations Grid */
   .stations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .station-card {
     background: white;
     border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1014,14 +1014,15 @@
 
   .add-station-section {
     background: #f8fafc;
-    padding: 2rem;
-    border-radius: 12px;
+    padding: 1.5rem;
+    border-radius: 10px;
     border: 1px solid #e2e8f0;
   }
 
   .add-station-section h2 {
     margin-top: 0;
     color: #1f2937;
+    font-size: 1.25rem;
   }
 
   .station-form {
@@ -1044,7 +1045,7 @@
     padding: 0.75rem;
     border: 2px solid #e5e7eb;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: border-color 0.2s;
   }
 
@@ -1075,43 +1076,34 @@
     cursor: not-allowed;
   }
 
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-
-    .stats-bar {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .action-buttons {
-      justify-content: center;
-    }
-
+  /* Desktop optimizations */
+  @media (min-width: 1024px) {
     .main-content {
-      padding: 1rem;
-      margin-top: -1rem;
+      padding: 2rem 2.5rem;
+      margin-top: -2rem;
+    }
+
+    .search-container {
+      max-width: 500px;
     }
 
     .stations-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
     }
 
-    .station-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+    .station-card {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .main-content {
+      padding: 2.5rem 3rem;
     }
 
-    .station-badge {
-      align-self: flex-start;
-    }
-
-    .form-container {
-      padding: 1rem;
+    .stations-grid {
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     }
   }
 

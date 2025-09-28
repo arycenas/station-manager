@@ -72,15 +72,6 @@ export const useStationsStore = defineStore('stations', {
           token ? token.substring(0, 20) + '...' : 'No token'
         );
 
-        // Test JWT token before making the actual request
-        try {
-          const { testJwtToken } = await import('../api/axios-config');
-          await testJwtToken();
-          console.log('JWT token validation passed!');
-        } catch (jwtError) {
-          console.error('JWT token validation failed:', jwtError);
-        }
-
         const response = await getStations();
         console.log('Stations API response:', response);
         console.log('Response data structure:', JSON.stringify(response.data, null, 2));

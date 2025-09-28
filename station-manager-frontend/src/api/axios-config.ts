@@ -63,16 +63,4 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-// Debug function to test JWT token
-export const testJwtToken = async () => {
-  try {
-    const response = await axiosInstance.get('/debug/test-token');
-    console.log('JWT Test Result:', response.data);
-    return response.data;
-  } catch (error) {
-    console.error('JWT Test Failed:', error);
-    throw error;
-  }
-};
-
 export default axiosInstance;
