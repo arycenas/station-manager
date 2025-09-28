@@ -7,6 +7,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
 import java.util.Date;
+import java.util.Map;
 import java.util.function.Function;
 import javax.crypto.SecretKey;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,11 +28,12 @@ public class JwtService {
         .compact();
   }
 
-  public String generateRefreshToken(UserDetails userDetails) {
+  public String generateRefreshToken(Map<String, Object> extraClaims, UserDetails userDetails) {
     var now = new Date(System.currentTimeMillis());
     var expired = new Date(now.getTime() + 432000000);
 
     return Jwts.builder()
+        .claims(extraClaims)
         .subject(userDetails.getUsername())
         .issuedAt(now)
         .expiration(expired)

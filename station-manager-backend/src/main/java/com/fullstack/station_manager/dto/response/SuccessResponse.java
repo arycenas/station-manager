@@ -6,8 +6,8 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class RegisterResponse {
+public class SuccessResponse {
 
   private String message;
-  private Users data;
+  private Object data;
 }
