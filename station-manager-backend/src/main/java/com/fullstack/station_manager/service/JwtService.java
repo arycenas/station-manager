@@ -1,21 +1,17 @@
 package com.fullstack.station_manager.service;
 
-import java.security.Key;
-import java.util.Date;
-import java.util.Map;
-import java.util.function.Function;
-
-import javax.crypto.SecretKey;
-
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
-
 import com.fullstack.station_manager.utility.Constant;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import java.security.Key;
+import java.util.Date;
+import java.util.Map;
+import java.util.function.Function;
+import javax.crypto.SecretKey;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 @Service
 public class JwtService {
@@ -53,12 +49,6 @@ public class JwtService {
     final String username = extractUsernameFromToken(token);
 
     return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-  }
-
-  public boolean validateTokenFromClient(String token) {
-      var tokenIsExpired = isTokenExpired(token);
-
-      return !tokenIsExpired;
   }
 
   private Key getSigningKey() {

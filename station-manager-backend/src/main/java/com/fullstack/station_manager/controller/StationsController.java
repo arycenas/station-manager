@@ -5,6 +5,7 @@ import com.fullstack.station_manager.service.StationsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +30,8 @@ public class StationsController {
   public ResponseEntity<SuccessResponse> saveStations() {
     log.info("StationsController: POST /stations/save endpoint called");
     log.info(
-        "StationsController: Authentication context: "
-            + org.springframework.security.core.context.SecurityContextHolder.getContext()
-                .getAuthentication());
+        "StationsController: Authentication context: {}",
+        SecurityContextHolder.getContext().getAuthentication());
 
     var response = stationsService.saveStations();
 

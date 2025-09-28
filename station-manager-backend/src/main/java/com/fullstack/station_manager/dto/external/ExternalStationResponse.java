@@ -8,12 +8,14 @@ import lombok.Data;
 
 @Data
 public class ExternalStationResponse {
+
   private String name;
   private String uri;
   private List<Stop> stops;
 
   @Data
   public static class Stop {
+
     private String agency;
     private String uri;
     private String name;
@@ -22,6 +24,7 @@ public class ExternalStationResponse {
 
   @Data
   public static class Route {
+
     @JsonProperty("route_group_id")
     private String routeGroupId;
 
@@ -34,6 +37,7 @@ public class ExternalStationResponse {
 
   @Data
   public static class StopTime {
+
     @JsonProperty("service_id")
     private Integer serviceId;
 

@@ -4,7 +4,6 @@ import com.fullstack.station_manager.dto.request.LoginRequest;
 import com.fullstack.station_manager.dto.request.RegisterRequest;
 import com.fullstack.station_manager.dto.response.SuccessResponse;
 import com.fullstack.station_manager.service.AuthenticationService;
-import com.fullstack.station_manager.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
